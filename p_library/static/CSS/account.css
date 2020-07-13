@@ -1,0 +1,59 @@
+ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.form-input-fields {
+    max-width: 190px;
+    margin: auto;
+}
+
+.form-input-fields>p {
+    margin-top: -16px;
+}
+
+.github-bttn {
+    max-width: 360px;
+    height: 50px;
+    background-color: black;
+    margin: auto;
+    padding: 0;
+    color: white;
+    text-decoration: none;
+    border-radius: 8px;
+}
+
+.github-bttn p {
+    display: inline;
+    float: right;
+    margin-top: 15px;
+    margin-right: 15px;
+}
+
+.github-link {
+    text-decoration: none !important;
+}
+
+.gh-logo {
+    height: 44px;
+    width: 44px;
+    margin: 3px 0 3px 3px;
+}
+
+.error {
+    color: red;
+}
+
+.avatar {
+    width: 260px;
+    height: 260px;
+    object-fit: cover;
+    position: relative;
+}
+
+.avatar-form {
+    max-width: 210px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}

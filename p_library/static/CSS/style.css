@@ -1,0 +1,126 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans+Condensed:wght@700&family=Roboto&display=swap');
+
+html {
+    position: relative;
+    min-height: 100%;
+}
+
+body {
+    font-family: 'Roboto', sans-serif;
+    font-size: 14px;
+    margin-bottom: 90px;
+}
+
+h1, h2, h3, h4 {
+    color: #03588c;
+    font-family: 'Open Sans Condensed', sans-serif;
+}
+
+nav {
+    margin-bottom: 30px;
+}
+
+th {
+    background-color: #03588c;
+    color: white;
+}
+
+.container {
+    margin-top: 20px;
+}
+
+.btn-small {
+    /* background-color: #03588c; */
+    /* border: none; */
+    width: 22px;
+    height: 22px;
+    font-size: 12px;
+    padding: 1px 0 0 1px;
+    border-radius: 0 !important;
+}
+
+.btn-small:hover {
+    background-color: #103e59;
+}
+
+.btn-small.right-border {
+    border-right: 1px solid #959699;
+}
+
+.colored {
+    background-color: #f7f7f9;
+    color: #03588c;
+}
+
+li.inner {
+    margin: 2px 0 2px 32px;
+}
+
+.nav-link {
+    color: #03588c;
+    text-decoration: underline;
+}
+
+.nav-link:hover {
+    text-decoration: underline;
+}
+
+.user-auth {
+    width: 100%;
+}
+
+.border {
+    padding: 20px 40px;
+    margin-top: 14px;
+}
+
+a {
+    color: #03588c;
+}
+
+.add-btn-main-group {
+    margin-top: 6px;
+    margin-bottom: 10px;
+    float: right;
+}
+
+.book-form-btn {
+    margin-top: 30px;
+    float: right;
+}
+
+.row-margin-top {
+    margin-top: 14px;
+}
+
+.author-form-btn {
+    margin-left: 24px;
+}
+
+span.friend {
+    color: black;
+    margin-left: 10px;
+}
+
+.friend-link {
+    float: right;
+}
+
+.add-friend-link {
+    text-align: center;
+    width: 160px;
+    margin: 20px auto -12px auto;
+    display: block;
+}
+
+.book_cover {
+    width: 300px;
+    height: 500px;
+}
+
+footer {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    margin-top: 12px;
+}

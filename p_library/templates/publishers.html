@@ -1,0 +1,18 @@
+{% extends 'base.html' %}
+{% block title %}My Library — Publishers{% endblock %}
+{% block content %}
+<h3 class="text-center">Список издательств</h3>
+<div class="border rounded border-light">
+    <ul class="list-group">
+        {% for publisher, books in book_publisher.items %}
+        <li class="list-group-item colored">{{ publisher }} [{{ books|length }}]</li>
+        <ul class="list-group list-group-flush">
+            {% for book in books %}
+            <li class="list-group-item inner">&#8226 {{ book }}</li>
+            {% endfor %}
+            <br>
+        </ul>
+        {% endfor %}
+    </ul>
+</div>
+{% endblock %}

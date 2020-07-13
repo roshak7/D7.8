@@ -1,0 +1,38 @@
+{% extends 'base.html' %}
+{% block title %}My Library — User {{ user }} {% endblock %}
+{% load crispy_forms_tags %}
+{% block content %}
+<div class="container">
+    <div class="row">
+        <div class="col col-lg-4">
+            <img class="avatar" src="{{ extra_data.avatar_url }}" alt="">
+        </div>
+        <div class="col col-lg-8">
+            <h2>Аккаунт {{ extra_data.login }}</h2>
+            <hr>
+            <p class="font-weight-bold">имя: <span class="font-weight-normal">
+                    {{ extra_data.name }}
+                </span>
+            </p>
+            <p class="font-weight-bold">e-mail: <span class="font-weight-normal">
+                    {{ extra_data.email }}
+                </span>
+            </p>
+            <p class="font-weight-bold">локация: <span class="font-weight-normal">
+                    {{ extra_data.location }}
+                </span>
+            </p>
+            <p class="font-weight-bold">ссылка: <span class="font-weight-normal">
+                    <a href="{{ extra_data.html_url }}">GitHub</a>
+                </span>
+            </p>
+            <hr>
+            <p class="font-italic">
+                репозиториев: {{ extra_data.public_repos }} /
+                гистов: {{ extra_data.public_gists }} /
+                фолловеров: {{ extra_data.followers }}
+            </p>
+        </div>
+    </div>
+</div>
+{% endblock %}

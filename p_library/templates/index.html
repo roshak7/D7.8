@@ -1,0 +1,51 @@
+{% extends 'base.html' %}
+{% block title %}My Library — All Books{% endblock %}
+{% block content %}
+<h4 class="text-center">Добро пожаловать в {{ title }}. <br>
+    Тут собрано {{ books|length }} книг из моей личной коллекции.</h4>
+<div class="btn-group add-btn-main-group" role="group">
+    <a href="/book/create" class="btn btn-outline-secondary add-btn-main">Добавить Книгу</a>
+    <a href="/author/create" class="btn btn-outline-secondary add-btn-main">Добавить Автора</a>
+</div>
+<table class="table table-bordered table-condensed">
+    <thead>
+        <tr class="text-center">
+            <th class="w-25">Назване</th>
+            <th>ISBN</th>
+            <th>Описание</th>
+            <th>Год</th>
+            <th>Автор</th>
+            <th>Страна</th>
+            <th>Кол-во</th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for book in books %}
+        <tr>
+            <td><a href="../book/{{ book.pk }}" title="подробнее">{{ book.title }}</a></td>
+            <td>{{ book.ISBN }}</td>
+            <td>{{ book.description }}</td>
+            <td>{{ book.year_release }}</td>
+            <td>{{ book.author.full_name }}</td>
+            <td>{{ book.author.country }}</td>
+            <td>{{ book.copy_count }}</td>
+            <td>
+                <div class="btn-group" role="group" aria-label="Basic example">
+                    <form action="/index/book_increment/" method="post" enctype="multipart/form-data">
+                        {% csrf_token %}
+                        <input type="hidden" name="id" value="{{ book.id }}">
+                        <input class="btn btn-secondary right-border btn-small" type="submit" value="+">
+                    </form>
+                    <form action="/index/book_decrement/" method="post" enctype="multipart/form-data">
+                        {% csrf_token %}
+                        <input type="hidden" name="id" value="{{ book.id }}">
+                        <input class="btn btn-secondary btn-small" type="submit" value="-">
+                    </form>
+                </div>
+            </td>
+        </tr>
+        {% endfor %}
+    </tbody>
+</table>
+{% endblock %}

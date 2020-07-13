@@ -1,0 +1,59 @@
+{% extends 'base.html' %}
+{% block title %}My Library — Create Book{% endblock %}
+{% load crispy_forms_tags %}
+{% block content %}
+<div class="container">
+    <div class="row">
+        <div class="col col-sm-12">
+            <h4 class="text-center">Добавить новую книгу</h4>
+        </div>
+    </div>
+    <div class="row row-margin-top">
+        <div class="col col-sm-12">
+            <form method="post" enctype='multipart/form-data'>
+                {% csrf_token %}
+                <div class="row justify-content-sm-center">
+                    <div class="col-4">
+                        {{ form.ISBN|as_crispy_field }}
+                    </div>
+                    <div class="col-4">
+                        {{ form.title|as_crispy_field }}
+                    </div>
+                </div>
+                <div class="row justify-content-sm-center">
+                    <div class="col-6">
+                        {{ form.author|as_crispy_field }}
+                    </div>
+                    <div class="col-2">
+                        {{ form.year_release|as_crispy_field }}
+                    </div>
+                </div>
+                <div class="row justify-content-sm-center">
+                    <div class="col-8">
+                        {{ form.description|as_crispy_field }}
+                    </div>
+                </div>
+                <div class="row justify-content-sm-center">
+                    <div class="col-6">
+                        {{ form.publisher|as_crispy_field }}
+                    </div>
+                    <div class="col-2">
+                        {{ form.price|as_crispy_field }}
+                    </div>
+                </div>
+                <div class="row justify-content-sm-center">
+                    <div class="col-2">
+                        {{ form.copy_count|as_crispy_field }}
+                    </div>
+                    <div class="col-4">
+                        {{ form.image|as_crispy_field }}
+                    </div>
+                    <div class="col-2">
+                        <button type="submit" class="btn btn-secondary book-form-btn">Сохранить</button>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+{% endblock %}

@@ -1,0 +1,24 @@
+{% extends 'base.html' %}
+{% block title %}My Library — {{ book.title }}{% endblock %}
+{% block content %}
+<div class="container">
+    <div class="row">
+        <div class="col-sm-5">
+            {% if book.image %}
+            <img class="book_cover" src="{{ book.image.url }}" alt="{{ book.title }}">
+            {% else %}
+            <img class="book_cover" src="../media/book_covers/no_cover.png" alt="no cover">
+            {% endif %}
+        </div>
+        <div class="col-sm-7">
+            <h3>{{ book.title }}</h3>
+            <hr>
+            <p><span class="font-weight-bold">Автор:</span> {{ book.author }}</p>
+            <p><span class="font-weight-bold">Год издания:</span> {{ book.year_release }}</p>
+            <p><span class="font-weight-bold">Описание:</span> {{ book.description }}</p>
+            <p><span class="font-weight-bold">Идатель:</span> {{ book.publisher }}</p>
+            <p><span class="font-weight-bold">ISBN:</span> {{ book.ISBN }}</p>
+        </div>
+    </div>
+</div>
+{% endblock %}
